@@ -4,7 +4,10 @@ from .models import Task
 
 # Register your models here.
 class TaskAdmin(admin.ModelAdmin):
-    fields = ["title", "text"]
+    fieldsets = (
+        (None, {"fields": ("title", "text")}),
+        ("Created date", {"fields": ("created_date")}),
+    )
 
 
 admin.site.register(Task, TaskAdmin)
