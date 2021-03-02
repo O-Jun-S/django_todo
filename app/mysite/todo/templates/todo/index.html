@@ -1,2 +1,13 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}">
+
+<body>
+    <ul>
+    {% for task in tasks %}
+    <li>
+        <h1>{{ task.title }}</h1>
+        <p>{{ task.text }}</p>
+    </li>
+    {% endfor %}
+    </ul>
+</body>
