@@ -6,5 +6,4 @@ services:
       - 8000:8000
     volumes:
       - ./app/:/work
-    command: python3 todo/manage.py runserver 0:8000
-
+    command: python3 ./mysite/manage.py runserver 0:8000
