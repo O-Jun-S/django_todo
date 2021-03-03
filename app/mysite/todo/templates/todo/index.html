@@ -30,9 +30,11 @@
         {% for task in tasks %}
         <div class="block">
             <div class="box">
-                <h1>{{ task.title }}</h1>
-                <h4>{{ task.created_date }}</h4>
-                <p>{{ task.text }}</p>
+                <a href="{% url 'read' task.id %}">
+                    <h1>{{ task.title }}</h1>
+                    <h4>{{ task.created_date }}</h4>
+                    <p>{{ task.text }}</p>
+                </a>
             </div>
         </div>
         {% endfor %}

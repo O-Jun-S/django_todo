@@ -8,14 +8,5 @@ from django.http import HttpResponse
 def index(request):
     return render(request, "todo/index.html", {"tasks": Task.objects.all()})
 
-
-def create(request):
-    if request.method == "POST":
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            form.save()
-    
-    else:
-        form = TaskForm()
-
-    return render(request, "todo/create.html", {"form": form})
+def read(request, task_id):
+    return render(request, "todo/read.html", {"task": Task.objects.get(id=task_id)})
