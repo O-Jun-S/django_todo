@@ -14,12 +14,19 @@
         </div>
     </section>
 
-    <section class="_form">
-        <form action="{% url 'read' %} method="post">
+    <section class="form">
+        <form action="{% url 'create_task' %}" method=post>
             {% csrf_token %}
             {{ form }}
             <input type="submit" value="Submit">
         </form>
     </section>
+
+    <div class="block">
+        <article class="message is-medium is-info">
+            <a href="{% url 'index' %}">Go back to index page.</a>
+        </article>
+    </div>
+
 </body>
 </html>
