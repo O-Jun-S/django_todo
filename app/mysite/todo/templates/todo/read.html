@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Read task</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    </head>
+    <body>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <p class="title">
+                    Read task
+                </p>
+            </div>
+        </section>
+
+        <div class="block">
+            <article class="message is-large is-success">
+                <div class="message-body">
+                    <p class="title">{{ task.title }}</p>
+                    <p class="limit_date subtitle">Limit: {{ task.limit_date }}</p>
+                    <p>{{ task.text }}</p>
+                </div>
+            </article>
+        </div>
+    </body>
+</html>
