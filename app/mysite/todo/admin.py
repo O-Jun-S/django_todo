@@ -6,7 +6,7 @@ from .models import Task
 class TaskAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {"fields": ("title", "text")}),
-        ("Created date", {"fields": ("created_date",)},)
+        ("Date Data", {"fields": ("created_date", "destination_date",)},),
     )
 
 
