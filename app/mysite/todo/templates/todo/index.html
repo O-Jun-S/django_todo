@@ -11,22 +11,30 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <p class="title">
-                TODO アプリ
+                TODO app
             </p>
 
             <p class="subtitle">
-                予定を管理
+                Manage tasks.
             </p>
         </div>
     </section>
 
+    <section class="create_button">
+            <div class="notification is-info">
+                <a>Create a task</a>
+            </div>
+    </section>
+
     <section class="main">
         {% for task in tasks %}
+        <div class="block">
             <div class="box">
                 <h1>{{ task.title }}</h1>
                 <h4>{{ task.created_date }}</h4>
                 <p>{{ task.text }}</p>
             </div>
+        </div>
         {% endfor %}
     </section>
 </body>
