@@ -3,19 +3,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Read task</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        {% include "todo/meta.html" with title="Read Task" only %}
     </head>
+
     <body>
-        <section class="hero is-primary">
-            <div class="hero-body">
-                <p class="title">
-                    Read task
-                </p>
-            </div>
-        </section>
+        {% include "todo/header.html" with title="Read Task" only %}
 
         <div class="block">
             <article class="message is-large is-success">
@@ -27,10 +19,7 @@
             </article>
         </div>
 
-        <div class="block">
-            <article class="message is-medium is-info">
-                <a href="{% url 'index' %}">Go back to index page.</a>
-            </article>
-        </div>
+        {% include "todo/go_back.html" %}
+
     </body>
 </html>
