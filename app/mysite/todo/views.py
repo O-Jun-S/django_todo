@@ -27,4 +27,4 @@ def create_task(request):
     date_lst = list(map(int, request.POST["limit_date"].split("/")))
     task.limit_date = datetime.datetime(year=date_lst[0], month=date_lst[1], day=date_lst[2])
     task.save()
-    return HttpResponseRedirect(reverse('read', args=[task.id]))
+    return HttpResponseRedirect(reverse('todo:read', args=[task.id]))

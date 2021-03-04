@@ -1,10 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Create a task</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    {% include "todo/meta.html" with title="Create A Task" only %}
 </head>
+
 <body>
     <section class="hero is-primary">
         <div class="hero-body">
@@ -15,18 +16,14 @@
     </section>
 
     <section class="form">
-        <form action="{% url 'create_task' %}" method=post>
+        <form action="{% url 'todo:create_task' %}" method=post>
             {% csrf_token %}
             {{ form }}
             <input type="submit" value="Submit">
         </form>
     </section>
 
-    <div class="block">
-        <article class="message is-medium is-info">
-            <a href="{% url 'index' %}">Go back to index page.</a>
-        </article>
-    </div>
+    {% include "todo/go_back.html" %}
 
 </body>
 </html>

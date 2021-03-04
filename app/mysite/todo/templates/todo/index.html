@@ -1,28 +1,17 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <title>TODO app</title>
+    {% include "todo/meta.html" with title="TODO app" only %}
 </head>
-<body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <p class="title">
-                TODO app
-            </p>
 
-            <p class="subtitle">
-                Manage tasks.
-            </p>
-        </div>
-    </section>
+<body>
+    {% include "todo/header.html" with title="TODO app" subtitle="Manage Tasks" only %}
 
     <section class="create_button">
             <div class="notification is-info">
-                <a href="{% url 'create' %}">Create a task</a>
+                <a href="{% url 'todo:create' %}">Create a task</a>
             </div>
     </section>
 
@@ -30,7 +19,7 @@
         {% for task in tasks %}
         <div class="block">
             <div class="box">
-                <a href="{% url 'read' task.id %}">
+                <a href="{% url 'todo:read' task.id %}">
                     <h1>{{ task.title }}</h1>
                     <h4>{{ task.created_date }}</h4>
                     <p>{{ task.text }}</p>
